@@ -1,6 +1,6 @@
 require("dotenv").config();
 const { error, info } = require('console');
-
+const router =require("./router/routers")
 const nodemailer=require('nodemailer')
 const port=process.env.PORT|| 4000;
 const express=require("express")
@@ -9,11 +9,9 @@ const app=express()
 app.get('/',(req,resp)=>{
     resp.send("hi i am live")
 })
-app.set('view engine', 'ejs');
-app.get('/data',(req,resp)=>{
-    resp.render("data")
-})
 
+
+app.use("/data",router)
 app.use(cors())
 app.use(express.json())
 app.post('/',(req,resp)=>{
