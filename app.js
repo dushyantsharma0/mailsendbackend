@@ -1,4 +1,6 @@
+require("dotenv").config();
 const { error, info } = require('console');
+
 const nodemailer=require('nodemailer')
 const port=process.env.PORT|| 4000;
 const express=require("express")
@@ -56,6 +58,15 @@ app.get('/send',(req,resp)=>{
 
     
 })
+const start =async ()=>{
+    try{
+        
 app.listen(port,()=>{
-    console.log(`server is running on ${port}`)
+        console.log(`${port} yes i am connected`)
 })
+    }catch(error){
+        console.log(error)
+    }
+};
+
+start();
