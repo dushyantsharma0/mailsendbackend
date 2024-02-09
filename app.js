@@ -1,6 +1,6 @@
 const { error, info } = require('console');
 const nodemailer=require('nodemailer')
-const port=process.env.PORT|| 6000;
+const port=process.env.PORT|| 4000;
 const express=require("express")
 const cors=require('cors')
 const app=express()
